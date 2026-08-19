@@ -1,0 +1,25 @@
+{
+  "name": "sell4all",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mouna-saoui/Sell4All.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mouna-saoui/Sell4All/issues"
+  },
+  "homepage": "https://github.com/mouna-saoui/Sell4All#readme",
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "csv-parse": "^7.0.2"
+  }
+}
