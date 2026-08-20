@@ -13,13 +13,15 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/mouna-saoui/Sell4All/issues"
   },
   "homepage": "https://github.com/mouna-saoui/Sell4All#readme",
   "dependencies": {
     "chart.js": "^4.5.1",
-    "csv-parse": "^7.0.2"
+    "cors": "^2.8.6",
+    "csv-parse": "^7.0.2",
+    "express": "^5.2.1"
   }
 }
