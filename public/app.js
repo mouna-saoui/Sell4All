@@ -1,32 +1,28 @@
-async function getData(){
-    console.log("hello")
-    const response = await fetch("/api/dataCSV")
-    const data = await response.json();
-    console.log(data)
-    displayData(data)
+import { displayData } from "./displayData.js";
+
+async function fetchData(){
+    const res = await fetch("http://localhost:3000/api/getData")
+    if(!res.ok){
+        throw new Error(`${res.status}`)
+    }
+
+    const data = await res.json()
+    return data
+}
+
+async function main() {
+
+    try {
+        const data = await fetchData();
+        displayData(data);
+
+    } catch (error) {
+
+        console.error("Error fetching data:", error);
+
+    }
 }
 
 
-function displayData(data){
-    const table = document.getElementById("Table");
-console.log("heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeelo ")
-    data.forEach(data => {
+main();
 
-        const row = document.createElement("tr");
-
-        row.innerHTML = `
-        <td> </td>
-            <td>${data.Name}</td>
-            <td>${data.Phone_Number}</td>
-            <td>${data.Email}</td>
-            <td>${data.Country}</td>
-            <td>${data.Age}</td>
-            <td>${data.Gender}</td>
-            <td>${data.Customer_spendings}</td>
-        `;
-
-        table.appendChild(row);
-    });
-}
-
-getData();
