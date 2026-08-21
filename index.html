@@ -1,71 +1,199 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
     <title>Sell4All Data Analysis</title>
+  </head>
+  <style>
+    #Accueil {
+      background-image: url('images/bg.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment:fixed;
+      background-repeat: no-repeat;
+    }
+  </style>
+<body class="p-2 bg-white">
+<main>
+  <div id="Accueil" class="flex justify-center relative h-[100vh]">
+    <div class="absolute inset-0 z-10 bg-[rgba(163, 35, 213, 0.38)] backdrop-blur-sm"></div>
+    <nav class="fixed top-0 left-0 flex justify-around items-center h-[60px] w-full z-20 px-6 shadow-lg shadow-[#7854D3]/30 border-b border-[#7854D3]/20 bg-[linear-gradient(143deg,rgba(163,35,213,1)_0%,rgba(0,0,0,0.86)_100%)]">
+        <div class="flex items-center gap-2">
+            <i class="fas fa-store text-white"></i>
+            <p class="text-white font-['Caveat'] text-2xl font-semibold">Sell4All Data Analysis</p>
+        </div>
+        <div class="flex items-center gap-6">
+            <a href="#Aceuill" class="text-gray-200 hover:text-white hover:transition-colors hover:text-lg hover:bg-[#A50ADE] hover:border-2 hover:border-white hover:rounded-full hover:p-2">Accueil</a>
+            <a href="#Client" class="text-gray-200 hover:text-white hover:transition-colors hover:text-lg hover:bg-[#A50ADE] hover:border-2 hover:border-white hover:rounded-full hover:p-2">Client</a>
+            <a href="#Statistic" class="text-gray-200 hover:text-white hover:transition-colors hover:text-lg hover:bg-[#A50ADE] hover:border-2 hover:border-white hover:rounded-full hover:p-2">Graphique</a>
+        </div>
+    </nav>
+    <div class="flex justify-center items-center z-13 gap-4">
+        <div class=" ">
+            <p class="font-['Caveat'] text-center text-[30px]">détail spécialisée dans la vente de vêtements d'occasion en ligne</p>
+            <p class="text-[20px] text-gray-200 max-w-4xl border-">
+              Le résumé technique permet d’identifier la structure * et la
+              qualité générale du jeu de données. Le fichier contient <span class="totalCustomers font-bold text-[rgba(255,255,255,0.9)]">00</span>
+              lignes Les colonnes Country et Gender sont de type texte, tandis
+              que Age et Customer spendings sont des données numériques. Cette
+              première observation montre que le jeu de données contient à la
+              fois des informations catégorielles et quantitatives, ce qui
+              permettra d’effectuer différentes analyses statistiques et
+              comparaisons entre les clients et les pays. La vérification des
+              types de données est également importante avant les calculs,
+              notamment pour s'assurer que les valeurs d'âge et de dépenses sont
+              bien interprétées comme des nombres et non comme des chaînes de
+              caractères.
+            </p>
+        </div>
+        <div>
+            <img src="/public/images/img.jpeg" alt="data" class="rounded-2xl h-[500px]">
+        </div>
 
-    <link rel="stylesheet" href="style.css">
-</head>
 
-<body>
-
-    <header>
-        <h1>Sell4All Customer Data</h1>
-        <p>Customer dataset visualization</p>
-    </header>
-
-    <main>
-
-        <section class="stats">
-            <div class="card">
-                <h2 id="totalCustomers">0</h2>
-                <p>Total Customers</p>
-            </div>
-
-            <div class="card">
-                <h2 id="averageAge">0</h2>
-                <p>Average Age</p>
-            </div>
-
-            <div class="card">
-                <h2 id="totalSpending">0</h2>
-                <p>Total Spending</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Customers</h2>
-
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Email</th>
-                            <th>Country</th>
-                            <th>Age</th>
-                            <th>Gender</th>
-                            <th>Spending</th>
-                        </tr>
-                    </thead>
-
-                    <tbody id="table">
-                    </tbody>
+    </div> 
+</div>
+<div id="Client" class="bg-white min-h-screen bg-white gap-5">
+        <h2 class="text-white font-['Caveat'] text-2xl font-semibold text-center text-[100px] text-[#7854D3]">Client</h2>
+            <div class="grid grid-cols-2 min-h-[30vh] w-full">
+                <div class="grid grid-cols-1 p-9 gap-4 h-auto w-full ">              
+                    <h4 class="text-lg font-semibold flex items-center gap-2">
+Statistic                </h4>
+                    <div class="flex justify-between items-center border-[1px] border-white rounded-2xl h-[50px] w-full p-4 shadow-[50px] shadow-[#ffffff] ">Nombre des customers <p class=" totalCustomers text-[25px] text-white font-bold "></p></div>
+                    <div class="flex justify-between items-center border-[1px] border-white rounded-2xl h-[50px] w-full p-4 shadow-[50px] shadow-[#ffffff] ">Moyenne d'age <p id="AVGage" class=" text-[25px] text-white font-bold "></p></div> 
+                    <div class="flex justify-between items-center border-[1px] border-white rounded-2xl h-[50px] w-full p-4 shadow-[50px] shadow-[#ffffff] ">Moyenne des depenses <p id="AVGcost" class=" text-[25px] text-white font-bold "></p></div> 
+                    <div class="flex justify-between items-center border-[1px] border-white rounded-2xl h-[50px] w-full p-4 shadow-[50px] shadow-[#ffffff] ">Médian des depenses <p id="mAge" class=" text-[25px] text-white font-bold "></p></div> 
+                    <div class="flex justify-between items-center border-[1px] border-white rounded-2xl h-[50px] w-full p-4 shadow-[50px] shadow-[#ffffff] ">Médian de l'age <p id="mCost" class=" text-[25px] text-white font-bold "></p></div> 
+                  
+                </div>
+                <div class="gap-4 p-9">
+                     <h4 class="text-lg font-semibold flex items-center gap-2">
+                  Détail des colonnes
+                </h4>
+                <table class="w-full text-sm">
+                  <thead>
+                    <tr class="border-1 border-white bg-[#B684D9]">
+                      <th
+                        class="text-left py-2 px-3 text-[15px] font-semibold text-gray-400 uppercase tracking-wider"
+                      >
+                        Colonne
+                      </th>
+                      <th
+                        class="text-left py-2 px-3 text-[15px] font-semibold text-gray-400 uppercase tracking-wider"
+                      >
+                        Type
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="columns" class="divide-y divide-white/5"></tbody>
                 </table>
+                </div>
+
+                 <div class="col-span-2 gap-4 p-9">
+                     <h4 class="text-lg font-semibold flex items-center gap-2">
+                        Médiane age par pays
+                </h4>
+                <table class="w-full text-sm ">
+                  <thead>
+                    <tr class="border-white bg-[#B684D9]">
+                      <th
+                        class="text-left py-2 px-3 text-[15px] font-semibold text-gray-400 uppercase tracking-wider"
+                      >
+                        Pays
+                      </th>
+                      <th
+                        class="text-left py-2 px-3 text-[15px] font-semibold text-gray-400 uppercase tracking-wider"
+                      >
+                        Médiane age
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="mediamAgePay" class="divide-y divide-white/5"></tbody>
+                </table>
+                </div>
             </div>
-        </section>
 
-        <canvas id="chart"></canvas>
 
-    </main>
+            <div class="p-15">
+                <h4 class="text-lg font-semibold flex items-center gap-2 p-8">
+                  Détail des costumers
+                </h4>
+    <table class="w-full text-sm">
+              <thead>
+                <tr class="border-2 border-white bg-[#B684D9]">
+                  <th
+                    class="text-left py-2 px-3 text-[15px] font-semibold text-gray-400 uppercase tracking-wider"
+                  >
+                    <i class="fas fa-user mr-1"></i>Name
+                  </th>
+                  <th
+                    class="text-left py-2 px-3 text-[15px] font-semibold text-gray-400 uppercase tracking-wider"
+                  >
+                    <i class="fas fa-phone mr-1"></i>Phone
+                  </th>
+                  <th
+                    class="text-left py-2 px-3 text-[15px] font-semibold text-gray-400 uppercase tracking-wider"
+                  >
+                    <i class="fas fa-envelope mr-1"></i>Email
+                  </th>
+                  <th
+                    class="text-left py-2 px-3 text-[15px] font-semibold text-gray-400 uppercase tracking-wider"
+                  >
+                    <i class="fas fa-globe mr-1"></i>Country
+                  </th>
+                  <th
+                    class="text-left py-2 px-3 text-[15px] font-semibold text-gray-400 uppercase tracking-wider"
+                  >
+                    <i class="fas fa-calendar-alt mr-1"></i>Age
+                  </th>
+                  <th
+                    class="text-left py-2 px-3 text-[15px] font-semibold text-gray-400 uppercase tracking-wider"
+                  >
+                    <i class="fas fa-venus-mars mr-1"></i>Gender
+                  </th>
+                  <th
+                    class="text-left py-2 px-3 text-[15px] font-semibold text-gray-400 uppercase tracking-wider"
+                  >
+                    <i class="fas fa-coins mr-1"></i>Spending
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="table" class="divide-y divide-white/5">
+              </tbody>
+            </table>
+            </div>
+      
 
-    <script type="module" src="./public/app.js">
-
-    </script>
-
+</div>
+<div id="Statistic">
+            <div
+          class="rounded-2xl bg-[rgba(11,9,21,0.6)] border border-white/10 p-6 backdrop-blur-sm"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="text-lg font-semibold flex items-center gap-2">
+              <span>Répartition des dépenses</span>
+            </h3>
+          </div>
+          <div
+            class="relative p-6 bg-gradient-to-br from-[rgba(142,99,249,0.05)] to-transparent rounded-xl border border-white/5 flex items-center justify-center"
+          >
+            <canvas id="chart" class="w-full h-full rounded-xl"></canvas>
+            <div
+              class="absolute bottom-2 right-2 text-[10px] text-gray-500 flex items-center gap-1"
+            >
+             
+            </div>
+          </div>
+        </div>
+</div>
+</main>
+ <script type="module" src="./public/app.js"></script>
 
 
 </body>
