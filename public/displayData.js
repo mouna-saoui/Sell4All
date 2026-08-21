@@ -1,3 +1,6 @@
+
+import {medianAge} from "./statistic.js"
+
 export function displayData(data){
     const table = document.getElementById("table");
 
@@ -18,6 +21,27 @@ for (let i = 0; i < 5; i++) {
         table.appendChild(row);
 }
 
+
+
+    let obj = {}
+
+    data.forEach(e=>{
+        if(obj[e.Country]){
+            obj[e.Country].push(e);
+        }else{
+            obj[e.Country] = [e]
+        }
+    })
+
+        const medianArr = [];
+        for(const key in obj){
+            medianArr.push({
+                Country : key,
+                MedianAge: medianAge(obj[key])
+            })
+        }
+    console.log(medianArr);
+    
 
 }
 
