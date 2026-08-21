@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,10 @@
     "chart.js": "^4.5.1",
     "cors": "^2.8.6",
     "csv-parse": "^7.0.2",
+    "csv-stringify": "^6.8.3",
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "vite": "^8.2.2"
   }
 }
