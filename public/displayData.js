@@ -1,6 +1,7 @@
 
 import {medianAge} from "./statistic.js"
 
+import Chart from "chart.js/auto"
 export function displayData(data){
     const table = document.getElementById("table");
 
@@ -42,6 +43,20 @@ for (let i = 0; i < 5; i++) {
         }
     console.log(medianArr);
     
+const divChart = document.getElementById("chart") ;
+new Chart(divChart ,{
+    type: "bar" ,
+    data: {
+        labels: medianArr.map(e => e.Country ),
+        datasets : [{
+            label: "Median age by country",
+            data: medianArr.map(e=>e.MedianAge),
+            borderWidth : 1 ,
+        }],
+    },
+
+}) 
+
 
 }
 
