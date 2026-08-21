@@ -6,25 +6,23 @@ export function readData(fileName){
     const csv = fs.readFileSync(fileName , "utf8");
 
     const result = parse(csv , {
-        header :true ,
         columns : true,
         skip_empty_lines: true,
         trim : true
     })
-
     const cleanResult = result.map(r =>{
         return{
-            Name: r.Name,
-            Phone_Number: r['Phone Number'],
-            Email: r.Email,
-            Address: r.Address,
-            Country: r.Country,
-            Postal_code: r['Postal code'],
-            Last_date_of_connection: r['Last date of connection'],
-            Last_time_of_connection: r['Last time of connection'],
-            Age: r.Age,
-            Gender: r.Gender,
-            Customer_spendings: r['Customer spendings']
+            Name: String(r.Name),
+            Phone_Number: String( r['Phone Number']),
+            Email: String( r.Email),
+            Address: String( r.Address),
+            Country: String( r.Country),
+            Postal_code: String( r['Postal code']),
+            Last_date_of_connection: String( r['Last date of connection']),
+            Last_time_of_connection: String( r['Last time of connection']),
+            Age:Number( r.Age),
+            Gender: String( r.Gender),
+            Customer_spendings:Number( r['Customer spendings'])
         }
     })
     return cleanResult ;
