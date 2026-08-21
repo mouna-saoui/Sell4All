@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sell4All Data Analysis</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Sell4All Customer Data</h1>
+        <p>Customer dataset visualization</p>
+    </header>
+
+    <main>
+
+        <section class="stats">
+            <div class="card">
+                <h2 id="totalCustomers">0</h2>
+                <p>Total Customers</p>
+            </div>
+
+            <div class="card">
+                <h2 id="averageAge">0</h2>
+                <p>Average Age</p>
+            </div>
+
+            <div class="card">
+                <h2 id="totalSpending">0</h2>
+                <p>Total Spending</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Customers</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Country</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Spending</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="table">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <canvas id="chart"></canvas>
+
+    </main>
+
+    <script type="module" src="./public/app.js">
+
+    </script>
+
+
+
+</body>
+</html>
